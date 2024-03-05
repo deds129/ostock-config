@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: eureka-server
+  boot:
+    admin:
+      context-path: /admin
+server:
+  port: 8070
+eureka:
+  instance:
+    # Имя хоста, где находится экземпляр Eureka
+    hostname: eurekaserver
+  client:
+    registerWithEureka: false # Запретить серверу Config Server регистрироваться в службе Eureka
+    fetchRegistry: false # не кешировать информацию из реестра
+    serviceUrl:
+      # URL службы для любого клиента. Это комбинация атрибутов eureka.instance.hostname и server.port;
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    # Начальное время ожидания, прежде чем сервер начнет принимать запросы 
+    waitTimeInMsWhenSyncEmpty: 5
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+   
