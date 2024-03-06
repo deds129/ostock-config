@@ -9,8 +9,8 @@ server:
 eureka:
   instance:
     # Имя хоста, где находится экземпляр Eureka
-    hostname: eurekaserver
-    #hostname: localhost
+    #hostname: eurekaserver
+    hostname: localhost
   client:
     registerWithEureka: false # Запретить серверу Config Server регистрироваться в службе Eureka
     fetchRegistry: false # не кешировать информацию из реестра
